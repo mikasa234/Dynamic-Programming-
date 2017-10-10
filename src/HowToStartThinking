@@ -1,0 +1,40 @@
+Rule 1 : Don't Give up ! It's not Rocket Science. Even Rocket Science is not worth giving up though !:)
+Rule 2 : Help Yourself. This will pay off. If you'll never try you'll certainly never know.
+
+# What Definition says about DP ?
+Dynamic Programming is an algorithmic paradigm that solves a given complex problem by breaking it into sub problems and
+stores the results of subproblems to avoid computing the same results again(caching).
+Following are the two main properties of a problem that suggest that the given problem can be solved using Dynamic programming:
+1) Overlapping Subproblems
+2) Optimal Substructure
+
+# So, What separates plain recursion from DP ? Why do we need to cache results of subproblems ?
+Recursion is used when problem can be easily solved by breaking it down to subproblems and we need solution of subproblems
+again and again. This leads to unnecessary overhead calls and wastage of both time and space. In classic example of fibonacci
+series we end up with exponential time (2^N). But if we start to cache the values in each step in a table after evaluation,
+then we can save lot of time by just doing a look up in the table before making another call. If the value is present,
+ then great! we use it. Otherwise, we make the function call and store the value in table for any further reference.
+
+Basic Guidelines I have been collecting from Discussion section in online judge platforms (working on it):
+
+1. Know that it is going to have a recursive solution. Think if the problem can be reduced to smaller problems. Do you see
+any repetition of task? Anything we are doing over and again but to different set or range of stuffs.
+
+2. Go down to the smallest possible case(which can't be broken down further) also called as base case. Also look for cases
+what can be a fail case and success case.
+Construct the base cases and remember that this step is the most crucial step as this solves most part of the problem. So keep
+doodling with small cases first. To start with, write them on a piece of paper.
+
+3.Write a Backtrack ! To write a backtrack, We need to come up with the equation. After playing with the lowest cases possible
+and getting their return values, play with one or two steps above those cases to see the pattern of repetition and write the
+recurrence on paper. return the value in the end of the function.
+
+4.Try testing it with smaller custom input to the function just to cross check whether you have come up with the right
+recurrence relation. If everything looks great, next job is to look for redundant arguments/values. It is quite possible that
+we are passing redundant values to function. This is optimization step to come up with a cleaner and better code.
+
+5. Cache the values in a table/Array. This step is going to change everything just by a mere addition of two or three lines
+so use the table just before making further calls.
+
+6. Finally test with different custom inputs.
+
